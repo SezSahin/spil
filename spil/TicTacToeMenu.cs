@@ -33,7 +33,7 @@ namespace spil
             }
             Console.WriteLine("tic tac toe");
             Console.WriteLine();
-            Console.WriteLine("1. Oret nyt spil");
+            Console.WriteLine("1. Oret et nyt spil");
             Console.WriteLine("2. Set en brik");
             Console.WriteLine("3. Flyt en brik");
             Console.WriteLine();
