@@ -8,12 +8,19 @@ namespace spil
 {
     public class TicTacToe
     {
+        //private bool gameRunning = true;
+        //private string input;
+        //private playerOne, playerTwo;
+
         public char[,] GameBoard { get; set; }
         public TicTacToe()
         {
-            GameBoard = new char[3, 3] { {' ', ' ', ' '},
+            GameBoard = new char[3, 3] 
+            { 
+                {' ', ' ', ' '},
                 {' ', ' ', ' '}, 
-                { ' ', ' ', ' '} };
+                {' ', ' ', ' '}
+            };
         }
 
         public string GetGameBoardView()
@@ -38,11 +45,54 @@ namespace spil
             return resultat;
         }
 
-        public char Validate()
+
+        public static char Validate(char[,] gameBoard)
         {
             char resultat = ' ';
 
             // skriv validerings kode her
+
+            if (gameBoard[0, 0] == 'X' && gameBoard[1, 0] == 'X' && gameBoard[2, 0] == 'X')
+            {
+                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+
+            if (gameBoard[0, 1] == 'X' && gameBoard[1, 1] == 'X' && gameBoard[2, 1] == 'X')
+            {
+                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+
+            if (gameBoard[0, 2] == 'X' && gameBoard[1, 2] == 'X' && gameBoard[2, 2] == 'X')
+            {
+                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+
+            if (gameBoard[0, 0] == 'X' && gameBoard[0, 1] == 'X' && gameBoard[0, 2] == 'X')
+            {
+                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+
+            if (gameBoard[1, 0] == 'X' && gameBoard[1, 1] == 'X' && gameBoard[1, 2] == 'X')
+            {
+                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
+
+            if (gameBoard[2, 0] == 'X' && gameBoard[2, 1] == 'X' && gameBoard[2, 2] == 'X')
+            {
+                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
+                Console.ReadLine();
+                Environment.Exit(0);
+            }
 
             return resultat;
         }
