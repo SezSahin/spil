@@ -15,5 +15,14 @@ namespace Test
             char actual = ticTacToe.Validate();
             Assert.AreEqual(expectet, actual); 
         }
+
+        [TestMethod]
+        public void EitherPlayerHasThreeInARow()
+        {
+            TicTacToe ticTacToe = new TicTacToe();
+            const char expected = ' ';
+            char actual = ticTacToe.Validate();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
