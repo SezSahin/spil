@@ -55,7 +55,7 @@ namespace spil
 
         private void DoActionFor1()
         {
-            Console.WriteLine("skriv koden til at opret nyt spil");
+            Console.WriteLine("skriv koden til at oprette nyt spil");
             Console.ReadLine();
         }
         private void DoActionFor2()
