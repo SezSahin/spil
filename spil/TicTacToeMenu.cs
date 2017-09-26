@@ -33,7 +33,7 @@ namespace spil
             }
             Console.WriteLine("tic tac toe");
             Console.WriteLine();
-            Console.WriteLine("1. Oret et nyt spil");
+            Console.WriteLine("1. Opret et nyt spil");
             Console.WriteLine("2. Set en brik");
             Console.WriteLine("3. Flyt en brik");
             Console.WriteLine();
@@ -55,13 +55,12 @@ namespace spil
 
         private void DoActionFor1()
         {
-            Console.WriteLine("skriv koden til at oprette nyt spil");
-            Console.ReadLine();
+            ticTacToe = new TicTacToe();
         }
         private void DoActionFor2()
         {
-            Console.WriteLine("skriv koden til at få spillerens input til at sætte en brik");
-            Console.ReadLine();
+            Console.WriteLine("indtast koordinater");
+            ticTacToe.Place(Int32.Parse(Console.ReadLine()), Int32.Parse(Console.ReadLine()));
         }
         private void DoActionFor3()
         {

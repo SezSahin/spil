@@ -8,7 +8,8 @@ namespace spil
 {
     public class TicTacToe : ITicTacToe
     {
-        //private bool gameRunning = true;
+        private bool gameRunning = true;
+        private bool currentPlayer = true;
         //private string input;
         //private playerOne, playerTwo;
 
@@ -21,6 +22,7 @@ namespace spil
                 {' ', ' ', ' '}, 
                 {' ', ' ', ' '}
             };
+            gameRunning = true;
         }
 
         public string GetGameBoardView()
@@ -96,6 +98,27 @@ namespace spil
 
             return resultat;
         }
+        public bool Place(int x, int y)
+        {
+            if (currentPlayer)
+            {
+
+                GameBoard[x, y] = 'X';
+            }
+            else
+            {
+                GameBoard[x, y] = 'O';
+            }
+            GetGameBoardView();
+            currentPlayer = !currentPlayer;
+            return true;
+        }
+
+        public char CheckWin()
+        {
+            throw new NotImplementedException();
+        }
+
 
         // her kan implementeres metoder til at sætte og flytte en brik
 

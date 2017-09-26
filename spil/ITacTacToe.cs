@@ -8,8 +8,8 @@ namespace spil
 {
     interface ITicTacToe
     {
-        bool Place(Array[,] array);
-        bool CheckWin();
+        bool Place(int x, int y);
+        char CheckWin();
         string GetGameBoardView();
 
     }
