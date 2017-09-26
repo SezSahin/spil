@@ -5,8 +5,22 @@ using spil;
 namespace Test
 {
     [TestClass]
-    public class TicTacToeTest
-    {
+    public class TicTacToeTest {
+        [TestMethod]
+        public void TicTacToeCanStart()
+        {
+            throw new Exception();
+        }
+        [TestMethod]
+        public void TicTacToeCanPlace()
+        {
+            throw new Exception();
+        }
+        [TestMethod]
+        public void TicTacToeCanNotReplace()
+        {
+            throw new Exception();
+        }
         [TestClass]
         public class GameWinnerServiceTests
         {
@@ -184,7 +198,7 @@ namespace Test
             //};
 
             //    assert.areequal('o', tictactoe.validate(gameboard));
-            //}
+            }
         }
     }
 }

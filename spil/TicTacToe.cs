@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace spil
+namespace spil 
 {
-    public class TicTacToe
+    public class TicTacToe : ITicTacToe
     {
         //private bool gameRunning = true;
         //private string input;
