@@ -4,10 +4,10 @@ namespace spil
 {
     public class TicTacToeMenu
     {
-        TicTacToe ticTacToe {get; set; }
+        TicTacToe ticTacToe { get; set; }
         public void Show()
         {
-            bool running = true;            
+            bool running = true;
             string choice = "";
             do
             {
@@ -19,17 +19,22 @@ namespace spil
                     case "2": DoActionFor2(); break;
                     case "3": DoActionFor3(); break;
                     case "0": running = false; break;
-                    default : ShowMenuSelectionErroe(); break;
+                    default: ShowMenuSelectionErroe(); break;
                 }
             } while (running);
         }
 
-        private void ShowMenu()
+        public void ShowMenu()
         {
             Console.Clear();
             if (ticTacToe != null)
             {
                 Console.WriteLine(ticTacToe.GetGameBoardView());
+                if (TicTacToe.Validate(ticTacToe.GameBoard) != ' ')
+                {
+                    Console.WriteLine("player " + TicTacToe.Validate(ticTacToe.GameBoard));
+                    Console.WriteLine("A Winner is You!");
+                }
             }
             Console.WriteLine("tic tac toe");
             Console.WriteLine();
@@ -39,6 +44,7 @@ namespace spil
             Console.WriteLine();
             Console.WriteLine("0. exit");
         }
+
 
         private string GetUserChoise()
         {
@@ -60,7 +66,7 @@ namespace spil
         private void DoActionFor2()
         {
             Console.WriteLine("indtast koordinater");
-            ticTacToe.Place(Int32.Parse(Console.ReadLine())-1, Int32.Parse(Console.ReadLine())-1);
+            ticTacToe.Place(Int32.Parse(Console.ReadLine()) - 1, Int32.Parse(Console.ReadLine()) - 1);
         }
         private void DoActionFor3()
         {

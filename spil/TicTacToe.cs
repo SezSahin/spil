@@ -13,7 +13,7 @@ namespace spil
         //private string input;
         //private playerOne, playerTwo;
 
-        public char[,] GameBoard { get; set; }
+        public char[,] GameBoard;
         public TicTacToe()
         {
             GameBoard = new char[3, 3] 
@@ -84,9 +84,10 @@ namespace spil
             {
                 GameBoard[x, y] = 'O';
             }
-            GetGameBoardView();
-            currentPlayer = !currentPlayer;
-            return true;
+                currentPlayer = !currentPlayer;
+                return true;
+            }
+            
         }
 
 
@@ -94,4 +95,4 @@ namespace spil
         // her kan implementeres metoder til at sætte og flytte en brik
 
     }
-}
+

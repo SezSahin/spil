@@ -9,7 +9,6 @@ namespace spil
     interface ITicTacToe
     {
         bool Place(int x, int y);
-        char validate();
         string GetGameBoardView();
 
     }
