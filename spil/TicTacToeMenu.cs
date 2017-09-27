@@ -60,7 +60,7 @@ namespace spil
         private void DoActionFor2()
         {
             Console.WriteLine("indtast koordinater");
-            ticTacToe.Place(Int32.Parse(Console.ReadLine()), Int32.Parse(Console.ReadLine()));
+            ticTacToe.Place(Int32.Parse(Console.ReadLine())-1, Int32.Parse(Console.ReadLine())-1);
         }
         private void DoActionFor3()
         {

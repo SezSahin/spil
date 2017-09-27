@@ -50,53 +50,28 @@ namespace spil
 
         public static char Validate(char[,] gameBoard)
         {
-            char resultat = ' ';
-
-            // skriv validerings kode her
-
-            if (gameBoard[0, 0] == 'X' && gameBoard[1, 0] == 'X' && gameBoard[2, 0] == 'X')
+               for(int i = 0; i < 3; i++)
             {
-                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
-                Console.ReadLine();
-                Environment.Exit(0);
-            }
+                if (gameBoard[0, i] == gameBoard[1,i] && gameBoard[1, i] == gameBoard[2,i])
+                {
+                    return gameBoard[0, i];
+                }
 
-            if (gameBoard[0, 1] == 'X' && gameBoard[1, 1] == 'X' && gameBoard[2, 1] == 'X')
+            }
+            for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
-                Console.ReadLine();
-                Environment.Exit(0);
-            }
+                if (gameBoard[i, 0] == gameBoard[i, 1] && gameBoard[i, i] == gameBoard[i, 2])
+                {
+                    return gameBoard[i, 0];
+                }
 
-            if (gameBoard[0, 2] == 'X' && gameBoard[1, 2] == 'X' && gameBoard[2, 2] == 'X')
-            {
-                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
-                Console.ReadLine();
-                Environment.Exit(0);
             }
+            if (gameBoard[1, 1] == gameBoard[2, 2] && gameBoard[2, 2] == gameBoard[3, 3])
+                return gameBoard[2, 2];
 
-            if (gameBoard[0, 0] == 'X' && gameBoard[0, 1] == 'X' && gameBoard[0, 2] == 'X')
-            {
-                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
-                Console.ReadLine();
-                Environment.Exit(0);
-            }
-
-            if (gameBoard[1, 0] == 'X' && gameBoard[1, 1] == 'X' && gameBoard[1, 2] == 'X')
-            {
-                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
-                Console.ReadLine();
-                Environment.Exit(0);
-            }
-
-            if (gameBoard[2, 0] == 'X' && gameBoard[2, 1] == 'X' && gameBoard[2, 2] == 'X')
-            {
-                Console.WriteLine("Player 1 wins!\nPress ENTER to end game");
-                Console.ReadLine();
-                Environment.Exit(0);
-            }
-
-            return resultat;
+            if (gameBoard[1, 3] == gameBoard[2, 2] && gameBoard[2, 2] == gameBoard[3, 1])
+                return gameBoard[2, 2];
+            else return ' ';
         }
         public bool Place(int x, int y)
         {
@@ -114,10 +89,6 @@ namespace spil
             return true;
         }
 
-        public char CheckWin()
-        {
-            throw new NotImplementedException();
-        }
 
 
         // her kan implementeres metoder til at sætte og flytte en brik
