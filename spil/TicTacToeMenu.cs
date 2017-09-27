@@ -5,9 +5,9 @@ namespace spil
     public class TicTacToeMenu
     {
         TicTacToe ticTacToe { get; set; }
+        bool running = true;
         public void Show()
         {
-            bool running = true;
             string choice = "";
             do
             {
@@ -34,6 +34,7 @@ namespace spil
                 {
                     Console.WriteLine("player " + TicTacToe.Validate(ticTacToe.GameBoard));
                     Console.WriteLine("A Winner is You!");
+                    running = false;
                 }
             }
             Console.WriteLine("tic tac toe");
