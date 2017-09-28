@@ -39,6 +39,60 @@ namespace Test
             };
             CollectionAssert.AreEqual(reference, ticTacToe.GameBoard);
         }
+        [TestMethod]
+        public void TicTacToeNoMoreThan3()
+        {
+            TicTacToe ticTacToe = new TicTacToe();
+            char[,] check =
+            {
+                { 'X',' ',' '},
+                { ' ',' ','X'},
+                { 'X',' ',' '},
+            };
+            char[,] reference =
+            {
+                { 'X',' ',' '},
+                { ' ',' ','X'},
+                { 'X',' ',' '},
+            };
+            ticTacToe.GameBoard = check;
+            ticTacToe.Place(1, 1);
+            CollectionAssert.AreEqual(reference, ticTacToe.GameBoard);
+        }
+        [TestMethod]
+        public void CanNotMoveOpponent()
+        {
+            TicTacToe ticTacToe = new TicTacToe();
+            ticTacToe.Place(1, 1);
+            ticTacToe.Move(1, 1, 2, 2);
+            char[,] reference =
+            {
+                {' ',' ',' '},
+                {' ','X',' '},
+                {' ',' ',' '},
+            };
+            CollectionAssert.AreEqual(reference, ticTacToe.GameBoard);
+        }
+        [TestMethod]
+        public void CanMove()
+        {
+            TicTacToe ticTacToe = new TicTacToe();
+            char[,] check =
+            {
+                { 'X',' ',' '},
+                { ' ',' ','X'},
+                { 'X',' ',' '},
+            };
+            char[,] reference =
+            {
+                { 'X',' ',' '},
+                { ' ','X','X'},
+                { ' ',' ',' '},
+            };
+            ticTacToe.GameBoard = check;
+            ticTacToe.Move(0, 0, 1, 1);
+            CollectionAssert.AreEqual(reference, ticTacToe.GameBoard);
+        }
         [TestClass]
         public class GameWinnerServiceTests
         {

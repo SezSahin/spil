@@ -87,8 +87,12 @@ namespace spil
                 currentPlayer = !currentPlayer;
                 return true;
             }
-            
+
+        public bool Move(int fromX, int fromY, int toX, int toY)
+        {
+            throw new NotImplementedException();
         }
+    }
 
 
 
