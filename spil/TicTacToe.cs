@@ -83,7 +83,7 @@ namespace spil
                     Console.WriteLine("Prøv igen");
                     Console.ReadLine();
                     Console.Clear();
-                    
+                    return false;
                 }
                 else
                 {
@@ -96,6 +96,7 @@ namespace spil
                 Console.WriteLine("Prøv igen");
                 Console.ReadLine();
                 Console.Clear();
+                return false;
 
             }
             else
