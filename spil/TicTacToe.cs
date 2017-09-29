@@ -8,10 +8,8 @@ namespace spil
 {
     public class TicTacToe : ITicTacToe
     {
-        private bool gameRunning = true;
-        private bool currentPlayer = true;
-        //private string input;
-        //private playerOne, playerTwo;
+        public bool currentPlayer = true;
+
 
         public char[,] GameBoard;
         public TicTacToe()
@@ -22,7 +20,6 @@ namespace spil
                 {' ', ' ', ' '}, 
                 {' ', ' ', ' '}
             };
-            gameRunning = true;
         }
 
         public string GetGameBoardView()
@@ -73,31 +70,19 @@ namespace spil
                 return gameBoard[2, 2];
             else return ' ';
         }
-        public bool Place(int x, int y)
+        public virtual bool Place(int x, int y)
         {
-            if (currentPlayer)
-            {
-                if (GameBoard[x, y] == 'O' || GameBoard[x, y] == 'X')
-                {
-                    Console.WriteLine("Det er ikke muligt at sætte en brik her");
-                    Console.WriteLine("Prøv igen");
-                    Console.ReadLine();
-                    Console.Clear();
-                    return false;
-                }
-                else
-                {
-                    GameBoard[x, y] = 'X';
-                }
-            }
-            else if(GameBoard[x, y] == 'X' || GameBoard[x, y] == 'O')
+            if (GameBoard[x, y] == 'O' || GameBoard[x, y] == 'X')
             {
                 Console.WriteLine("Det er ikke muligt at sætte en brik her");
                 Console.WriteLine("Prøv igen");
-                Console.ReadLine();
+                //Console.ReadLine();
                 Console.Clear();
                 return false;
-
+            }
+            if (currentPlayer)
+            {
+                GameBoard[x, y] = 'X';
             }
             else
             {
@@ -106,13 +91,6 @@ namespace spil
                 currentPlayer = !currentPlayer;
                 return true;
             }
-
-        public bool Move(int fromX, int fromY, int toX, int toY)
-        {
-
-
-            throw new NotImplementedException();
-        }
     }
 
 

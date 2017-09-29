@@ -10,7 +10,5 @@ namespace spil
     {
         bool Place(int x, int y);
         string GetGameBoardView();
-        bool Move(int fromX, int fromY, int toX, int toY);
-
     }
 }

@@ -42,7 +42,7 @@ namespace Test
         [TestMethod]
         public void TicTacToeNoMoreThan3()
         {
-            TicTacToe ticTacToe = new TicTacToe();
+            TicTacToeVariant ticTacToe = new TicTacToeVariant();
             char[,] check =
             {
                 { 'X',' ',' '},
@@ -62,7 +62,7 @@ namespace Test
         [TestMethod]
         public void CanNotMoveOpponent()
         {
-            TicTacToe ticTacToe = new TicTacToe();
+            TicTacToeVariant ticTacToe = new TicTacToeVariant();
             ticTacToe.Place(1, 1);
             ticTacToe.Move(1, 1, 2, 2);
             char[,] reference =
@@ -76,7 +76,7 @@ namespace Test
         [TestMethod]
         public void CanMove()
         {
-            TicTacToe ticTacToe = new TicTacToe();
+            TicTacToeVariant ticTacToe = new TicTacToeVariant();
             char[,] check =
             {
                 { 'X',' ',' '},
@@ -85,9 +85,9 @@ namespace Test
             };
             char[,] reference =
             {
-                { 'X',' ',' '},
-                { ' ','X','X'},
                 { ' ',' ',' '},
+                { ' ','X','X'},
+                { 'X',' ',' '},
             };
             ticTacToe.GameBoard = check;
             ticTacToe.Move(0, 0, 1, 1);

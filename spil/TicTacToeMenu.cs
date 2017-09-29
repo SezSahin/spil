@@ -71,8 +71,8 @@ namespace spil
         }
         private void DoActionFor3()
         {
-            Console.WriteLine("skriv koden til at få spillerens input til at flytte en brik");
-            Console.ReadLine();
+            Console.WriteLine("intast move from koordinater, derefter move to koordinater");
+            ticTacToe.Move()
         }
     }
 }
