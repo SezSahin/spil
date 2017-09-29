@@ -77,8 +77,26 @@ namespace spil
         {
             if (currentPlayer)
             {
+                if (GameBoard[x, y] == 'O' || GameBoard[x, y] == 'X')
+                {
+                    Console.WriteLine("Det er ikke muligt at sætte en brik her");
+                    Console.WriteLine("Prøv igen");
+                    Console.ReadLine();
+                    Console.Clear();
+                    
+                }
+                else
+                {
+                    GameBoard[x, y] = 'X';
+                }
+            }
+            else if(GameBoard[x, y] == 'X' || GameBoard[x, y] == 'O')
+            {
+                Console.WriteLine("Det er ikke muligt at sætte en brik her");
+                Console.WriteLine("Prøv igen");
+                Console.ReadLine();
+                Console.Clear();
 
-                GameBoard[x, y] = 'X';
             }
             else
             {
@@ -90,6 +108,8 @@ namespace spil
 
         public bool Move(int fromX, int fromY, int toX, int toY)
         {
+
+
             throw new NotImplementedException();
         }
     }
