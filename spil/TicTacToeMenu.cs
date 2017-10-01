@@ -18,11 +18,14 @@ namespace spil
                     case "1": DoActionFor1(); break;
                     case "2": DoActionFor2(); break;
                     case "3": DoActionFor3(); break;
+                    case "4": DoActionFor4(); break;
                     case "0": running = false; break;
                     default: ShowMenuSelectionErroe(); break;
                 }
             } while (running);
         }
+
+       
 
         public void ShowMenu()
         {
@@ -39,9 +42,10 @@ namespace spil
             }
             Console.WriteLine("tic tac toe");
             Console.WriteLine();
-            Console.WriteLine("1. Opret et nyt spil");
+            Console.WriteLine("1. Opret et nyt almindeligt spil");
             Console.WriteLine("2. Set en brik");
             Console.WriteLine("3. Flyt en brik");
+            Console.WriteLine("4. Opret et nyt variations Spil");
             Console.WriteLine();
             Console.WriteLine("0. exit");
         }
@@ -62,7 +66,10 @@ namespace spil
 
         private void DoActionFor1()
         {
+
+          
             ticTacToe = new TicTacToe();
+            
         }
         private void DoActionFor2()
         {
@@ -72,7 +79,13 @@ namespace spil
         private void DoActionFor3()
         {
             Console.WriteLine("intast move from koordinater, derefter move to koordinater");
-            ticTacToe.Move()
+            //ticTacToe.Move();
+            
+        }
+        private void DoActionFor4()
+        {
+            Console.WriteLine("Du har startet et variations spil");
+            ticTacToe = new TicTacToeVariant();
         }
     }
 }

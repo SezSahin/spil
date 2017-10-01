@@ -21,7 +21,7 @@ namespace spil
             }
             else
             {
-                player = 'Y';
+                player = 'O';
             }
         }
         public bool Move(int fromX, int fromY, int toX, int toY)
