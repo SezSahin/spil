@@ -24,7 +24,7 @@ namespace spil
                 player = 'O';
             }
         }
-        public bool Move(int fromX, int fromY, int toX, int toY)
+        public override bool Move(int fromX, int fromY, int toX, int toY)
         {
             checkPlayer();
             if (GameBoard[fromX, fromY] == player && GameBoard[toX,toY] == ' ')

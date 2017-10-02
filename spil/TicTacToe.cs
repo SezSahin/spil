@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace spil 
+namespace spil
 {
     public class TicTacToe : ITicTacToe
     {
@@ -14,10 +14,10 @@ namespace spil
         public char[,] GameBoard;
         public TicTacToe()
         {
-            GameBoard = new char[3, 3] 
-            { 
+            GameBoard = new char[3, 3]
+            {
                 {' ', ' ', ' '},
-                {' ', ' ', ' '}, 
+                {' ', ' ', ' '},
                 {' ', ' ', ' '}
             };
         }
@@ -47,9 +47,9 @@ namespace spil
 
         public static char Validate(char[,] gameBoard)
         {
-               for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
-                if (gameBoard[0, i] == gameBoard[1,i] && gameBoard[1, i] == gameBoard[2,i] && gameBoard[0,i] != ' ')
+                if (gameBoard[0, i] == gameBoard[1, i] && gameBoard[1, i] == gameBoard[2, i] && gameBoard[0, i] != ' ')
                 {
                     return gameBoard[0, i];
                 }
@@ -88,14 +88,18 @@ namespace spil
             {
                 GameBoard[x, y] = 'O';
             }
-                currentPlayer = !currentPlayer;
-                return true;
-            }
+            currentPlayer = !currentPlayer;
+            return true;
+        }
+
+        public virtual bool Move(int x, int y, int z, int w)
+        {
+            return false;
+        }
+
+
+
+
     }
-
-
-
-        // her kan implementeres metoder til at sætte og flytte en brik
-
-    }
+}
 

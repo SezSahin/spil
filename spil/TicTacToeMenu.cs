@@ -79,8 +79,7 @@ namespace spil
         private void DoActionFor3()
         {
             Console.WriteLine("intast move from koordinater, derefter move to koordinater");
-            //ticTacToe.Move();
-            
+            ticTacToe.Move(Int32.Parse(Console.ReadLine())-1, Int32.Parse(Console.ReadLine())-1,Int32.Parse(Console.ReadLine())-1,Int32.Parse(Console.ReadLine())-1);
         }
         private void DoActionFor4()
         {
