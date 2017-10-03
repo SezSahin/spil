@@ -11,13 +11,33 @@ namespace spil
         static void Main(string[] args)
         {
             Program myProgram = new Program();
-            myProgram.Run();
-        }
+            Console.WriteLine("press 1 for TicTacToe, or 2 for BattleShips");
+            Console.WriteLine();
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    myProgram.RunTicTacToe();
+                    break;
+                case "2":
+                    myProgram.RunBattleShips();
+                    break;
+                default:
+                    throw new Exception();
+            }
 
-        private void Run()
+        }
+            
+        
+
+        private void RunTicTacToe()
         {
             TicTacToeMenu ticTacToeMenu = new TicTacToeMenu();
             ticTacToeMenu.Show();
         }
+        private void RunBattleShips()
+        {
+            BattleShipsHandler hanler = new BattleShipsHandler();
+        }
     }
+
 }
