@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleShipsHandler.cs" />
     <Compile Include="IBattleships.cs" />
     <Compile Include="TicTacToeVariant.cs" />
     <Compile Include="ITacTacToe.cs" />
