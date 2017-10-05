@@ -8,7 +8,7 @@ namespace spil
 {
     interface IBattleShips
     {
-        bool Shoot(int x, int y);
+        bool Shoot();
         string GetGameBoardView();
         string GetRadarWiew();
         bool Place(int shipLength);

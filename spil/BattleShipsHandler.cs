@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 namespace spil
 {
     class BattleShipsHandler
-    {
+    { 
+internal void start()
+        {
+            BattleShipsPlayer battleShipsPlayer1 = new BattleShipsPlayer();
+            battleShipsPlayer1.Place(5);
+            battleShipsPlayer1.Shoot();
+        }
     }
 }

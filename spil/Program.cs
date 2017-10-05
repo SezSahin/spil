@@ -37,6 +37,7 @@ namespace spil
         private void RunBattleShips()
         {
             BattleShipsHandler hanler = new BattleShipsHandler();
+            hanler.start();
         }
     }
 
