@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace spil
 {
+    public struct Ships
+    {
+        public int Hangarskib;
+        public int Slagskib;
+        public int Destroyer;
+        public int Ubåd;
+        public int Patruljebåd;
+    }
+
     class BattleShipsPlayer : IBattleShips
     {
         public char[,] GameBoard;
         private char[,] radar;
+        public bool currentPlayer = true;
 
         public BattleShipsPlayer()
             // H is Hit
@@ -151,7 +161,7 @@ namespace spil
             while (true)
             {
                 memory = Gameboard[coordX, coordY];
-                Gameboard[coordX, coordY] = 'X';
+                Gameboard[coordX, coordY] = 'S';
                 Console.Clear();
                 Console.WriteLine(getWeiw());
                 Console.WriteLine("use arrow keys to move and enter to select");
@@ -159,21 +169,21 @@ namespace spil
                 {
                     case ConsoleKey.UpArrow:
                         Gameboard[coordX, coordY] = memory;
-                        coordY -= 1;
+                        coordX -= 1;
                         break;
                     case ConsoleKey.DownArrow:
                         Gameboard[coordX, coordY] = memory;
-                        coordY += 1;
+                        coordX += 1;
                         break;
                     case ConsoleKey.LeftArrow:
                         Gameboard[coordX, coordY] = memory;
-                        coordX -= 1;
+                        coordY -= 1;
                         break;
                     case ConsoleKey.RightArrow:
                         Gameboard[coordX, coordY] = memory;
-                        coordX += 1;
+                        coordY += 1;
                         break;
-                    case ConsoleKey.Enter:
+                    case ConsoleKey.S:
                         Gameboard[coordX, coordY] = memory;
                         int[] coords = new int[] { coordX, coordY };
                         return coords;
@@ -191,8 +201,20 @@ namespace spil
 
         }
 
+        public bool ChecksIfShipIsInRow()
+        {
+            return true;
+        }
+
         public bool Place(int shipLength)
         {
+            Ships ships = new Ships();
+            ships.Hangarskib = 5;
+            ships.Slagskib = 4;
+            ships.Destroyer = 3;
+            ships.Ubåd = 3;
+            ships.Patruljebåd = 2;
+
             int[] root = select(GameBoard,GetGameBoardView);
             int rootX = root[0];
             int rootY = root[1];
@@ -261,8 +283,23 @@ namespace spil
                         if (breaking == true) { continue; }
                         for (int i = 0; i >= shipLength; i++)
                         {
-                                GameBoard[rootX, rootY + i] = 'S';
+                            GameBoard[rootX, rootY + i] = 'S';
                         }
+                        return true;
+                    case ConsoleKey.Enter:
+                        if (GameBoard[rootX, rootY] == 'S')
+                        {
+                            Console.WriteLine("Det er ikke muligt at sætte en brik her");
+                            Console.WriteLine("Prøv igen");
+                            Console.ReadLine();
+                            Console.Clear();
+                            return false;
+                        }
+                        if (currentPlayer)
+                        {
+                            GameBoard[rootX, rootY] = 'S';
+                        }
+                        currentPlayer = !currentPlayer;
                         return true;
                     default:
                         continue;
