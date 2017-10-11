@@ -175,6 +175,7 @@ namespace spil
                 Console.Clear();
                 Console.WriteLine(getView());
                 Console.WriteLine("use arrow keys to move and enter to select");
+                
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.UpArrow:
@@ -200,12 +201,12 @@ namespace spil
                         break;
                     case ConsoleKey.RightArrow:
                         Gameboard[coordX, coordY] = memory;
-                        if (coordY >=0 && coordY <= 8)//catches attempts to escape the board
+                        if (coordY >=0 && coordY <= 8) //catches attempts to escape the board
 	                    {
                             coordY += 1;
 	                    }
                         break;
-                    case ConsoleKey.H: //case for "Hangarskib" placering
+                    /*case ConsoleKey.H: //case for "Hangarskib" placering
                         Gameboard[coordX, coordY] = memory;
                         int[] coords = new int[] { coordX, coordY };
                         return coords;
@@ -224,7 +225,8 @@ namespace spil
                     case ConsoleKey.P: //case for "pautruljebåds" placering
                         Gameboard[coordX, coordY] = memory;
                         int[] coords = new int[] { coordX, coordY };
-                        return coords;
+                        return coords;*/ //Virker pt. ikke korrekt.
+                    
                     
                     default:
                         break;
