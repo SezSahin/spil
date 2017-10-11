@@ -113,7 +113,7 @@ namespace spil
 
             return resultat;
         }
-        public string GetRadarWiew()
+        public string GetRadarView()
         {
             string resultat = "";
             resultat = resultat + "Y\n";
@@ -162,7 +162,7 @@ namespace spil
             return resultat;
         }
 
-        private int[] select(char[,] Gameboard, Func<string> getWeiw)
+        private int[] select(char[,] Gameboard, Func<string> getView)
         {
             char memory = Gameboard[5, 5];
             int coordX = 5;
@@ -173,7 +173,7 @@ namespace spil
                 memory = Gameboard[coordX, coordY];
                 Gameboard[coordX, coordY] = 'S';
                 Console.Clear();
-                Console.WriteLine(getWeiw());
+                Console.WriteLine(getView());
                 Console.WriteLine("use arrow keys to move and enter to select");
                 switch (Console.ReadKey().Key)
                 {
@@ -205,7 +205,7 @@ namespace spil
 
         public bool Shoot()
         {
-            int[] selection = select(radar,GetRadarWiew);
+            int[] selection = select(radar,GetRadarView);
             return true;
             
 
