@@ -56,7 +56,7 @@ namespace spil
             };
         }
 
-        public object CheckLoss()
+        public bool CheckLoss()
         {
             foreach (char slot in GameBoard)
             {
