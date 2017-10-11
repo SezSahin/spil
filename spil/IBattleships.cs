@@ -10,7 +10,7 @@ namespace spil
     {
         bool Shoot();
         string GetGameBoardView();
-        string GetRadarWiew();
+        string GetRadarView();
         bool Place(int shipLength);
         object CheckLoss();
     }
