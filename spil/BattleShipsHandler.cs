@@ -10,7 +10,7 @@ namespace spil
     { 
 internal void start()
         {
-            BattleShipsPlayer battleShipsPlayer1 = new BattleShipsPlayer();
+            BattleShipsPlayer battleShipsPlayer1 = new BattleShipsPlayer("player1");
             battleShipsPlayer1.Place(5);
             battleShipsPlayer1.Shoot();
         }

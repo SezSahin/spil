@@ -17,15 +17,17 @@ namespace spil
 
     class BattleShipsPlayer : IBattleShips
     {
+        public string Name;
         public char[,] GameBoard;
         private char[,] radar;
         public bool currentPlayer = true;
 
-        public BattleShipsPlayer()
+        public BattleShipsPlayer(string name)
+        {
+            this.Name = name;
             // H is Hit
             // M is Miss
             // S is Ship
-        {
             GameBoard = new char[10, 10]
             {
                 {' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
@@ -56,7 +58,11 @@ namespace spil
 
         public object CheckLoss()
         {
-            throw new NotImplementedException();
+            foreach (char slot in GameBoard)
+            {
+                if (slot == 'S') return false;
+            }
+            return true;
         }
 
         public string GetGameBoardView()
@@ -97,7 +103,7 @@ namespace spil
             resultat = resultat + "  *    *     *     *    *     *     *    *     *     *    *\n";
             resultat = resultat + "  *********************************************************\n";
             resultat = resultat + "  *    *     *     *    *     *     *    *     *     *    *\n";
-            resultat = resultat + "I * " + GameBoard[8, 0] + "  *" + GameBoard[8, 1] + "    *" + GameBoard[8, 2] + "   *" + GameBoard[8, 3] + "    *" + GameBoard[8, 4] + "    *" + GameBoard[8, 5] + "    *" + GameBoard[8, 6] + "   *" + GameBoard[8, 7] + "    *" + GameBoard[8, 8] + "    *" + GameBoard[8, 9] + "   *\n";
+            resultat = resultat + "I * " + GameBoard[8, 0] + "  *" + GameBoard[8, 1] + "    *" + GameBoard[8, 2] + "    *" + GameBoard[8, 3] + "   *" + GameBoard[8, 4] + "    *" + GameBoard[8, 5] + "    *" + GameBoard[8, 6] + "   *" + GameBoard[8, 7] + "    *" + GameBoard[8, 8] + "    *" + GameBoard[8, 9] + "   *\n";
             resultat = resultat + "  *    *     *     *    *     *     *    *     *     *    *\n";
             resultat = resultat + "  *********************************************************\n";
             resultat = resultat + "  *    *     *     *    *     *     *    *     *     *    *\n";
