@@ -179,7 +179,14 @@ namespace spil
                 {
                     case ConsoleKey.UpArrow:
                         Gameboard[coordX, coordY] = memory;
-                        coordX -= 1;
+                        if (coordX >= 0 && coordX <= 9)
+                        {
+                            coordX -= 1;        
+	                    }
+                        else
+                        {
+                            Console.WriteLine("Invalid move, please stay within the board!");
+                        }
                         break;
                     case ConsoleKey.DownArrow:
                         Gameboard[coordX, coordY] = memory;
