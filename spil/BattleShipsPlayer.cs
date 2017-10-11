@@ -171,7 +171,7 @@ namespace spil
             while (true)
             {
                 memory = Gameboard[coordX, coordY];
-                Gameboard[coordX, coordY] = 'S';
+                Gameboard[coordX, coordY] = 'M';
                 Console.Clear();
                 Console.WriteLine(getView());
                 Console.WriteLine("use arrow keys to move and enter to select");
@@ -179,31 +179,53 @@ namespace spil
                 {
                     case ConsoleKey.UpArrow:
                         Gameboard[coordX, coordY] = memory;
-                        if (coordX >= 0 && coordX <= 9)
+                        if (coordX >= 1 && coordX <= 9) //catches attempts to escape the board
                         {
-                            coordX -= 1;        
+                            coordX -= 1;
 	                    }
-                        else
-                        {
-                            Console.WriteLine("Invalid move, please stay within the board!");
-                        }
                         break;
                     case ConsoleKey.DownArrow:
                         Gameboard[coordX, coordY] = memory;
-                        coordX += 1;
+                        if (coordX >=0 && coordX <=8) //catches attempts to escape the board
+                        {
+                            coordX += 1;
+                        }
                         break;
                     case ConsoleKey.LeftArrow:
                         Gameboard[coordX, coordY] = memory;
-                        coordY -= 1;
+                        if (coordY >= 1 && coordY <=9)//catches attempts to escape the board
+	                    {
+                            coordY -= 1;
+	                    }
                         break;
                     case ConsoleKey.RightArrow:
                         Gameboard[coordX, coordY] = memory;
-                        coordY += 1;
+                        if (coordY >=0 && coordY <= 8)//catches attempts to escape the board
+	                    {
+                            coordY += 1;
+	                    }
                         break;
-                    case ConsoleKey.S:
+                    case ConsoleKey.H: //case for "Hangarskib" placering
                         Gameboard[coordX, coordY] = memory;
                         int[] coords = new int[] { coordX, coordY };
                         return coords;
+                    case ConsoleKey.S: //case for "Slagskibs" placering
+                        Gameboard[coordX, coordY] = memory;
+                        int[] coords = new int[] { coordX, coordY };
+                        return coords;
+                    case ConsoleKey.D: //case for "Destroyer" placering
+                        Gameboard[coordX, coordY] = memory;
+                        int[] coords = new int[] { coordX, coordY };
+                        return coords;
+                    case ConsoleKey.U: //case for "ubåds" placering
+                        Gameboard[coordX, coordY] = memory;
+                        int[] coords = new int[] { coordX, coordY };
+                        return coords;
+                    case ConsoleKey.P: //case for "pautruljebåds" placering
+                        Gameboard[coordX, coordY] = memory;
+                        int[] coords = new int[] { coordX, coordY };
+                        return coords;
+                    
                     default:
                         break;
                 }
