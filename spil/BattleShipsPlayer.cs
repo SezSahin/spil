@@ -206,28 +206,14 @@ namespace spil
                             coordY += 1;
 	                    }
                         break;
-                    /*case ConsoleKey.H: //case for "Hangarskib" placering
+                    case ConsoleKey.Enter:
                         Gameboard[coordX, coordY] = memory;
-                        int[] coords = new int[] { coordX, coordY };
+                        Console.Clear();
+                        Console.WriteLine(getView());
+                        int[] coords = new int[2];
+                        coords[0] = coordX;
+                        coords[1] = coordY;
                         return coords;
-                    case ConsoleKey.S: //case for "Slagskibs" placering
-                        Gameboard[coordX, coordY] = memory;
-                        int[] coords = new int[] { coordX, coordY };
-                        return coords;
-                    case ConsoleKey.D: //case for "Destroyer" placering
-                        Gameboard[coordX, coordY] = memory;
-                        int[] coords = new int[] { coordX, coordY };
-                        return coords;
-                    case ConsoleKey.U: //case for "ubåds" placering
-                        Gameboard[coordX, coordY] = memory;
-                        int[] coords = new int[] { coordX, coordY };
-                        return coords;
-                    case ConsoleKey.P: //case for "pautruljebåds" placering
-                        Gameboard[coordX, coordY] = memory;
-                        int[] coords = new int[] { coordX, coordY };
-                        return coords;*/ //Virker pt. ikke korrekt.
-                    
-                    
                     default:
                         break;
                 }
@@ -327,7 +313,7 @@ namespace spil
                             GameBoard[rootX, rootY + i] = 'S';
                         }
                         return true;
-                    case ConsoleKey.Enter:
+                    /*case ConsoleKey.Enter:
                         if (GameBoard[rootX, rootY] == 'S')
                         {
                             Console.WriteLine("Det er ikke muligt at sætte en brik her");
@@ -342,6 +328,7 @@ namespace spil
                         }
                         currentPlayer = !currentPlayer;
                         return true;
+                        */
                     default:
                         continue;
                 }
