@@ -6,15 +6,6 @@ using System.Threading.Tasks;
 
 namespace spil
 {
-    public struct Ships
-    {
-        public int Hangarskib;
-        public int Slagskib;
-        public int Destroyer;
-        public int Ubåd;
-        public int Patruljebåd;
-    }
-
     class BattleShipsPlayer : IBattleShips
     {
         public string Name;
@@ -171,7 +162,7 @@ namespace spil
             while (true)
             {
                 memory = Gameboard[coordX, coordY];
-                Gameboard[coordX, coordY] = 'M';
+                Gameboard[coordX, coordY] = 'X';
                 Console.Clear();
                 Console.WriteLine(getView());
                 Console.WriteLine("use arrow keys to move and enter to select");
@@ -222,10 +213,20 @@ namespace spil
 
         public bool Shoot()
         {
-            int[] selection = select(radar,GetRadarView);
-            return true;
-            
-
+            int[] selection = select(radar, GetRadarView);
+            int selectX = selection[0];
+            int selectY = selection[1];
+                if (GameBoard[selectX,selectY] == 'S')
+            {
+                radar[selectX, selectY] = 'H';
+                GameBoard[selectX, selectY] = 'H';
+                return true;
+            }
+                else
+            {
+                radar[selectX, selectY] = 'M';
+                return false;
+            }
         }
 
         public bool ChecksIfShipIsInRow()
@@ -235,13 +236,6 @@ namespace spil
 
         public bool Place(int shipLength)
         {
-            Ships ships = new Ships();
-            ships.Hangarskib = 5;
-            ships.Slagskib = 4;
-            ships.Destroyer = 3;
-            ships.Ubåd = 3;
-            ships.Patruljebåd = 2;
-
             int[] root = select(GameBoard,GetGameBoardView);
             int rootX = root[0];
             int rootY = root[1];
@@ -253,23 +247,23 @@ namespace spil
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.UpArrow:
-                        for (int i = 0; i >= shipLength; i++)
+                        for (int i = 0; i < shipLength; i++)
                         {
-                            if (GameBoard[rootX, rootY - i] != ' ')
+                            if (GameBoard[rootX - i , rootY] != ' ')
                             {
                                 breaking = true;
                                 break;
                             }
                         }
                         if (breaking == true) { continue; }
-                        for (int i = 0; i >= shipLength; i++)
+                        for (int i = 0; i < shipLength; i++)
                         {
-                            GameBoard[rootX, rootY - i] = 'S';
+                            GameBoard[rootX - i, rootY] = 'S';
                         }
                         return true;
 
                     case ConsoleKey.DownArrow:
-                        for (int i = 0; i >= shipLength; i++)
+                        for (int i = 0; i < shipLength; i++)
                         {
                             if (GameBoard[rootX, rootY + i] != ' ')
                             {
@@ -278,14 +272,14 @@ namespace spil
                             }
                         }
                         if (breaking == true) { continue; }
-                            for (int i = 0; i >= shipLength; i++)
+                            for (int i = 0; i < shipLength; i++)
                             {
                                 GameBoard[rootX, rootY + i] = 'S';
                             }
                         return true;
 
                     case ConsoleKey.LeftArrow:
-                        for (int i = 0; i >= shipLength; i++)
+                        for (int i = 0; i < shipLength; i++)
                         {
                             if (GameBoard[rootX - 1, rootY] != ' ')
                             {
@@ -294,13 +288,13 @@ namespace spil
                             }
                         }
                         if (breaking == true) { continue; }
-                        for (int i = 0; i >= shipLength; i++)
+                        for (int i = 0; i < shipLength; i++)
                             {
                                 GameBoard[rootX, rootY - i] = 'S';
                             }
                         return true;
                     case ConsoleKey.RightArrow:
-                        for (int i = 0; i >= shipLength; i++)
+                        for (int i = 0; i < shipLength; i++)
                         {
                             if (GameBoard[rootX + 1, rootY] != ' ')
                             {
@@ -308,27 +302,11 @@ namespace spil
                             }
                         }
                         if (breaking == true) { continue; }
-                        for (int i = 0; i >= shipLength; i++)
+                        for (int i = 0; i < shipLength; i++)
                         {
                             GameBoard[rootX, rootY + i] = 'S';
                         }
                         return true;
-                    /*case ConsoleKey.Enter:
-                        if (GameBoard[rootX, rootY] == 'S')
-                        {
-                            Console.WriteLine("Det er ikke muligt at sætte en brik her");
-                            Console.WriteLine("Prøv igen");
-                            Console.ReadLine();
-                            Console.Clear();
-                            return false;
-                        }
-                        if (currentPlayer)
-                        {
-                            GameBoard[rootX, rootY] = 'S';
-                        }
-                        currentPlayer = !currentPlayer;
-                        return true;
-                        */
                     default:
                         continue;
                 }
