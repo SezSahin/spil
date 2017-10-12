@@ -79,11 +79,11 @@ namespace spil
 
             resultat = resultat + "  *********************************************************\n";
 
-            resultat = resultat + "C * " + GameBoard[2, 0] + "   *" + GameBoard[2, 1] + "   *" + GameBoard[2, 2] + "    *" + GameBoard[2, 3] + "   *" + GameBoard[2, 4] + "    *" + GameBoard[2, 5] + "    *" + GameBoard[2, 6] + "   *" + GameBoard[2, 7] + "    *" + GameBoard[2, 8] + "    *" + GameBoard[2, 9] + "   *\n";
+            resultat = resultat + "C * " + GameBoard[2, 0] + "  *" + GameBoard[2, 1] + "    *" + GameBoard[2, 2] + "    *" + GameBoard[2, 3] + "   *" + GameBoard[2, 4] + "    *" + GameBoard[2, 5] + "    *" + GameBoard[2, 6] + "   *" + GameBoard[2, 7] + "    *" + GameBoard[2, 8] + "    *" + GameBoard[2, 9] + "   *\n";
 
             resultat = resultat + "  *********************************************************\n";
 
-            resultat = resultat + "D * " + GameBoard[3, 0] + "   *" + GameBoard[3, 1] + "   *" + GameBoard[3, 2] + "    *" + GameBoard[3, 3] + "   *" + GameBoard[3, 4] + "    *" + GameBoard[3, 5] + "    *" + GameBoard[3, 6] + "   *" + GameBoard[3, 7] + "    *" + GameBoard[3, 8] + "    *" + GameBoard[3, 9] + "   *\n";
+            resultat = resultat + "D * " + GameBoard[3, 0] + "  *" + GameBoard[3, 1] + "    *" + GameBoard[3, 2] + "    *" + GameBoard[3, 3] + "   *" + GameBoard[3, 4] + "    *" + GameBoard[3, 5] + "    *" + GameBoard[3, 6] + "   *" + GameBoard[3, 7] + "    *" + GameBoard[3, 8] + "    *" + GameBoard[3, 9] + "   *\n";
 
             resultat = resultat + "  *********************************************************\n";
 
@@ -127,11 +127,11 @@ namespace spil
 
             resultat = resultat + "  *********************************************************\n";
 
-            resultat = resultat + "C * " + GameBoard[2, 0] + "   *" + GameBoard[2, 1] + "   *" + GameBoard[2, 2] + "    *" + GameBoard[2, 3] + "   *" + GameBoard[2, 4] + "    *" + GameBoard[2, 5] + "    *" + GameBoard[2, 6] + "   *" + GameBoard[2, 7] + "    *" + GameBoard[2, 8] + "    *" + GameBoard[2, 9] + "   *\n";
+            resultat = resultat + "C * " + GameBoard[2, 0] + "  *" + GameBoard[2, 1] + "    *" + GameBoard[2, 2] + "    *" + GameBoard[2, 3] + "   *" + GameBoard[2, 4] + "    *" + GameBoard[2, 5] + "    *" + GameBoard[2, 6] + "   *" + GameBoard[2, 7] + "    *" + GameBoard[2, 8] + "    *" + GameBoard[2, 9] + "   *\n";
 
             resultat = resultat + "  *********************************************************\n";
 
-            resultat = resultat + "D * " + GameBoard[3, 0] + "   *" + GameBoard[3, 1] + "   *" + GameBoard[3, 2] + "    *" + GameBoard[3, 3] + "   *" + GameBoard[3, 4] + "    *" + GameBoard[3, 5] + "    *" + GameBoard[3, 6] + "   *" + GameBoard[3, 7] + "    *" + GameBoard[3, 8] + "    *" + GameBoard[3, 9] + "   *\n";
+            resultat = resultat + "D * " + GameBoard[3, 0] + "  *" + GameBoard[3, 1] + "    *" + GameBoard[3, 2] + "    *" + GameBoard[3, 3] + "   *" + GameBoard[3, 4] + "    *" + GameBoard[3, 5] + "    *" + GameBoard[3, 6] + "   *" + GameBoard[3, 7] + "    *" + GameBoard[3, 8] + "    *" + GameBoard[3, 9] + "   *\n";
 
             resultat = resultat + "  *********************************************************\n";
 
