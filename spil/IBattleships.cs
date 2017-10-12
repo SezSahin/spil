@@ -12,6 +12,6 @@ namespace spil
         string GetGameBoardView();
         string GetRadarView();
         bool Place(int shipLength);
-        object CheckLoss();
+        bool CheckLoss();
     }
 }

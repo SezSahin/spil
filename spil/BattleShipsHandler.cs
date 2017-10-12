@@ -13,8 +13,8 @@ namespace spil
             BattleShipsPlayer battleShipsPlayer1 = new BattleShipsPlayer("player1");
             BattleShipsPlayer battleShipsPlayer2 = new BattleShipsPlayer("player2");
 
-            battleShipsPlayer1.Place(); // place the ships for player1, then player2
-            battleShipsPlayer2.Place();
+            battleShipsPlayer1.Place(4); // place the ships for player1, then player2
+            battleShipsPlayer2.Place(5);
 
             while (true)
             {
