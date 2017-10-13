@@ -265,7 +265,7 @@ namespace spil
                     case ConsoleKey.DownArrow:
                         for (int i = 0; i < shipLength; i++)
                         {
-                            if (GameBoard[rootX, rootY + i] != ' ')
+                            if (GameBoard[rootX + i, rootY] != ' ')
                             {
                                 breaking = false;
                                 break;
@@ -274,7 +274,7 @@ namespace spil
                         if (breaking == true) { continue; }
                             for (int i = 0; i < shipLength; i++)
                             {
-                                GameBoard[rootX, rootY + i] = 'S';
+                                GameBoard[rootX + i, rootY] = 'S';
                             }
                         return true;
 
