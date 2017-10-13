@@ -10,8 +10,8 @@ namespace spil
     {
         internal void start()
         {
-            BattleShipsPlayer battleShipsPlayer1 = new BattleShipsPlayer("player1");
-            BattleShipsPlayer battleShipsPlayer2 = new BattleShipsPlayer("player2");
+            BattleShipsPlayer battleShipsPlayer1 = new BattleShipsPlayer("player 1");
+            BattleShipsPlayer battleShipsPlayer2 = new BattleShipsPlayer("player 2");
 
             battleShipsPlayer1.Place(5);
             battleShipsPlayer1.Place(4);
@@ -32,6 +32,7 @@ namespace spil
 
             while (true)
             {
+                Console.WriteLine("player 1 shoot");
                 battleShipsPlayer2.Shoot(); //player 1 turn
                  if (battleShipsPlayer2.CheckLoss())
                 { Console.WriteLine(battleShipsPlayer1.Name + " a winner is you!"); break; }
@@ -39,6 +40,7 @@ namespace spil
                 Console.WriteLine(" turn the computer to player 2");
                 Console.ReadLine();
 
+                Console.WriteLine("player 2 shoot");
                 battleShipsPlayer1.Shoot(); //player 2 turn
                 if (battleShipsPlayer1.CheckLoss())
                 { Console.WriteLine(battleShipsPlayer2.Name + " a winner is you!"); break; }

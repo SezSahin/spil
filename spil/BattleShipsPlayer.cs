@@ -174,7 +174,7 @@ namespace spil
                         if (coordX >= 1 && coordX <= 8) //catches attempts to escape the board
                         {
                             coordX -= 1;
-	                    }
+                        }
                         break;
                     case ConsoleKey.DownArrow:
                         Gameboard[coordX, coordY] = memory;
